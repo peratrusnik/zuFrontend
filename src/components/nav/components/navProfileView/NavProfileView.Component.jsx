@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import {removeUser} from '../../../../redux/user.slicer';
 import {removeUserFromLocalStorage} from '../../../../services/auth.service';
+import ButtonComponent from '../../../../UIkit/Button.Component';
 
 function NavProfileViewComponent() {
     const dispatch = useDispatch();
@@ -25,17 +26,8 @@ function NavProfileViewComponent() {
                     aria-expanded='false'>
                     <AiOutlineUser/>
                 </button>
-                <ul className='dropdown-menu'>
-                    <li>
-                        <Link className='dropdown-item' to='/'>
-                            Another action
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className='dropdown-item' to='/'>
-                            Something else here
-                        </Link>
-                    </li>
+                <span>{userStore && userStore.firstName}</span>
+                <ul className='dropdown-menu'>                   
                     <li>
                         {!userStore?.email ? (
                             <>
@@ -56,8 +48,8 @@ function NavProfileViewComponent() {
                                 </Link>
                                 <Link className='dropdown-item' to='/product/create'>
                                     Add product
-                                </Link>
-                                <button onClick={(e) => onLogOut()}>Log out</button>
+                                    </Link>
+                                    <button className='d-flex m-auto btn btn-dark mt-2' onClick={(e) => onLogOut()}>Log out</button>
                             </>
                         )}
                     </li>

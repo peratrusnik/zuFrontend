@@ -1,9 +1,12 @@
 import ProductCreateEditFormComponent from "../components/productCreate/productCreateForm.Component";
+import ContainerComponent from "../UIkit/Container.Component";
 
 
 const ProductCreateEditPageComponent = () => {
     return <>
-        <ProductCreateEditFormComponent/>
+        <ContainerComponent>
+            <ProductCreateEditFormComponent/>
+        </ContainerComponent>
     </>
 }
 

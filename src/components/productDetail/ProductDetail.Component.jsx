@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useLocation} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 // ICONS
 import {FaChevronDown, FaChevronUp} from 'react-icons/fa';
@@ -19,6 +19,11 @@ function ProductDetailComponent() {
     const [singleProduct, setSingleProduct] = useState({});
     const [count, setCount] = useState(1);
     const dispatch = useDispatch();
+
+    const location = useLocation()
+    useEffect(() => {
+        window.scroll(0,0)
+    },[location])
 
     useEffect(() => {
         getSingleDetailProduct(id).then((data) =>

@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeUserFromLocalStorage } from "../../services/auth.service";
 import { removeUser } from "../../redux/user.slicer";
 
-
-
 const AdminPageComponent = () => {
   
   const navigate = useNavigate()

@@ -61,7 +61,7 @@ const LoginSectionComponent = () => {
         <>
             <HeaderComponent title='Log in to your account'/>
             <div className='from-wrapper'>
-                <div className='login-form'>
+                <div className='login-form mb-5'>
                     <div className='form-floating mb-3'>
                         <p>Email</p>
                         <input

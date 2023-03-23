@@ -45,6 +45,7 @@ import PaymentPageComponent from "./pages/PaymentPage.Component";
 import OrderPageComponent from "./pages/OrderPage.Component";
 import {RootStoreContext} from "./context/RootStore.Context";
 import UnSubscribeNeswletter from './pages/UnSubscribeNeswletter';
+import ProfilePageComponent from './components/profilePage/ProfilePage.Component'
 
 
 const router = createBrowserRouter([
@@ -94,6 +95,12 @@ const router = createBrowserRouter([
                 path: "product/:productId/edit",
                 element: <AuthGuardComponent>
                     <ProductCreateEditPageComponent/>
+                </AuthGuardComponent>
+            },
+            {
+                path: "/user",
+                element: <AuthGuardComponent>
+                    <ProfilePageComponent/>
                 </AuthGuardComponent>
             },
             {

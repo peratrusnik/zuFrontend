@@ -462,18 +462,18 @@
                     .btnCart{
                         background-color: #FFF;
                         margin-bottom: 10px;
-                        color: #222222;
+                        color: #000;
                         &:hover{
                             background-color: #000000;
                             color: #FFF;
                         }
                     }
                     .btnCheckout{
-                        background-color: #000000;
-                        color: #FFF;
+                        background-color: #fff;
+                        color: #000;
                         &:hover{
-                            background-color: #FFF;
-                            color: #222222;
+                            background-color: #000;
+                            color: #fff;
                         }
                     }
                 }

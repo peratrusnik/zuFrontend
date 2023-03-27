@@ -12,8 +12,8 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTopComponent from './components/ScrollToTop/ScrollToTop.Component';
 
-// axios.defaults.baseURL = "https://zurea-shop.onrender.com/api";
-axios.defaults.baseURL = "http://localhost:5050/api";
+axios.defaults.baseURL = "https://zurea-shop.onrender.com/api";
+//axios.defaults.baseURL = "http://localhost:5050/api";
 axios.interceptors.request.use((config) => {
     if (localStorage.hasOwnProperty("zu_token")) {
         config.headers.Authorization = localStorage.getItem("zu_token")

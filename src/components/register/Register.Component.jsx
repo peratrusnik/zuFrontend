@@ -5,6 +5,7 @@ import {toast} from "react-toastify";
 import {useNavigate} from "react-router-dom";
 import ContainerComponent from "../../UIkit/Container.Component";
 import ButtonComponent from "../../UIkit/Button.Component";
+import HeaderComponent from "../headerSection/Header.Component";
 
 const RegisterSchema = Yup.object({
     email: Yup.string().email().required(),
@@ -15,11 +16,10 @@ const RegisterSchema = Yup.object({
 })
 const RegisterComponent = () => {
     const navigate = useNavigate()
-
+    
     return (
+      
         <ContainerComponent isFluid={false}>
-
-        <div className="row">
             <Formik
                 initialValues={{
                     email: '',
@@ -41,13 +41,13 @@ const RegisterComponent = () => {
                         toast.error(error?.response.data)
                     })
                 }}
-            >
+                >
 
                 {
-                    ({error, touched}) => {
+                    ({ error, touched }) => {
                         return <Form className="d-flex justify-content-center text-center">
-
-                            <div className="col-4 mb-3 p-4 b-1 border">
+                            <div className="col-xl-6 col-md-6 col-sm-12 mb-3 p-4 b-1 border">
+                            <h3>USER REGISTRATION FORM</h3>
                                 <Field className="form-control mb-3 mt-3"
                                        name="email"
                                        placeholder="Email"/>
@@ -79,8 +79,7 @@ const RegisterComponent = () => {
                     }
                 }
             </Formik>
-        </div>
-    </ContainerComponent>
+                </ContainerComponent>
 
     )
 }

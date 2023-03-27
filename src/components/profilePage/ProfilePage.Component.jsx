@@ -9,6 +9,8 @@ function ProfilePageComponent() {
         <ContainerComponent>
             <div className='profilePage-wrapper d-flex justify-content-center'>
                 <ul className='user-profile border col-8'>
+
+                    
                     <li>{ userStore.firstName}</li>
                     <li>{ userStore.lastName}</li>
                     <li>{ userStore.email}</li>

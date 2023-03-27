@@ -125,11 +125,17 @@ function CheckoutComponent() {
                         <span>{formik.errors.phoneNumber}</span> : null
                 }
             </div>
-            <button type="submit">Go to payment</button>
+            <div className="btnPay-wrapper text-center m-3">
+                <button className='btn btn-dark' type="submit">Go to payment</button>
+            </div>
         </form>
     }
     return <>
-        {renderForm()}
+        <div className="payment-wrapper d-flex justify-content-center">
+        <div className="col-6">
+            {renderForm()}
+        </div>
+        </div>
     </>
 }
 

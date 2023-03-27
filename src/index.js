@@ -45,7 +45,10 @@ import PaymentPageComponent from "./pages/PaymentPage.Component";
 import OrderPageComponent from "./pages/OrderPage.Component";
 import {RootStoreContext} from "./context/RootStore.Context";
 import UnSubscribeNeswletter from './pages/UnSubscribeNeswletter';
-import ProfilePageComponent from './components/profilePage/ProfilePage.Component'
+import ProfilePageComponent from './components/profilePage/ProfilePage.Component';
+import WishListPageComponent from './pages/Wishlist.Page.Component';
+import ProductComparePageComponent from './pages/ProductComparePage.Component';
+import compareSlicer from './redux/compare.slicer';
 
 
 const router = createBrowserRouter([
@@ -110,6 +113,10 @@ const router = createBrowserRouter([
                 </AuthGuardComponent>
             },
             {
+                path: '/productCompare',
+                element: <ProductComparePageComponent />
+            },
+            {
                 path: '/cartshop',
                 element: <CartShopPageComponent/>,
                 children: [
@@ -139,6 +146,10 @@ const router = createBrowserRouter([
                 path: '/unsubscribe/:id',
                 element: <UnSubscribeNeswletter/>,
             },
+            {
+				path: '/wishlist/:userId',
+				element: <WishListPageComponent />,
+			},
         ],
     },
     {
@@ -219,6 +230,7 @@ const store = configureStore({
         productStore: productSlicer,
         modalStore: modalSlicer,
         cartStore: cartSlicer,
+        compareStore: compareSlicer,
     },
 });
 const queryClient = new QueryClient();

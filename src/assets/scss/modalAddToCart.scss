@@ -1,0 +1,146 @@
+.productDetail .custom-modalCart-content, .comparisonWrapper .tableComparison .custom-modalCart-content{
+
+    border-radius: 0 !important;
+
+    h2{
+        margin-bottom: 0;
+    }
+
+    .custom-modalCart-header{
+        background-color: #4cbb6c;
+        border-radius: 0 !important;
+
+    }
+
+
+    .wrapper-cartModal-header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        color: #fff;
+
+        svg{
+            display: block;
+            width: 1.5em !important;
+            height: 1.5em !important;
+        }
+
+        .checkMark{
+            display: none;
+        }
+    }
+
+
+    .custom-btnClose{
+        background-color: #4cbb6c !important;
+        border-width: 0 !important;
+
+    }
+
+    .x-btn{
+        max-width:100% !important;
+        max-height: 100% !important;
+        color: #fff !important;
+    }
+
+
+    .leftHolder{
+        word-wrap: break-word;
+
+        .modal-cart-imgHolder{
+            padding: 10px 20px;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit:contain;
+        }
+        h3,p{
+            text-align: left;
+        }
+    }
+
+
+    .rightHolder{
+        padding: 10px 20px;
+        height:100%;
+        text-align: left;
+    }
+
+    .modal-continueBtn, .modal-checkoutBtn{
+        border: 1px solid #eee !important;
+        padding: 5px 10px;
+        margin-top: 5px;
+        font-weight: 500;
+        transition: all 0.5s;
+        font-size: 1.1rem;
+    }
+
+    .modal-continueBtn{
+        background-color: #f6f6f6;
+        color: #232323;
+
+
+        &:hover{
+            background-color: #232323;
+            color: #f6f6f6;
+
+        }
+    }
+
+    .modal-checkoutBtn{
+        background-color: #333;
+
+        .modal-checkoutLink{
+            color: #f6f6f6;
+            text-decoration:none;
+        }
+
+
+
+        &:hover{
+            background-color: #232323;
+
+        }
+    }
+
+    @media screen and (min-width:992px){
+        .wrapper-cartModal-header{
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            .checkMark{
+                display: inline-block;
+            }
+
+            .custom-btnClose{
+
+                position:absolute;
+                right:5px;
+                top:50%;
+                transform: translateY(-50%);
+
+            }
+        }
+
+        .leftHolder{
+
+            .modal-cart-imgHolder{
+                padding: 60px 20px;
+            }
+            img{
+                max-width: 100%;
+                height:auto;
+                object-fit: fill;
+            }
+        }
+        .rightHolder{
+            padding: 10px 50px 0;
+            border-left: 1px solid #eee;
+        }
+    }
+}

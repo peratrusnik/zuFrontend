@@ -47,7 +47,7 @@ function SingleSlideComponent({ ad }) {
                 <CartBoxOnHoverComponent/>   
             </div>            
             <Link to={`/productDetails/${ad._id}`}><h3 className='title'>{ad.title.slice(0, 25)}</h3></Link>
-            <div className="price-stars-wrapper">
+            <div className="price-stars-wrapper mb-4">
                 <div className="price-content">                                
                     <h4 className='price'>${ad.price}</h4>
                 </div>

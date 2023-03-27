@@ -22,10 +22,14 @@ const PaymentElementsComponent = ({ck}) => {
         })
     }
     return <>
-        {stripe && <div>
-            <PaymentElement />
-            <button onClick={onPay}>Pay</button>
-        </div>}
+        <div className="payment-wrapper d-flex justify-content-center">
+            <div className="payment col-8 text-center">
+                {stripe && <div>
+                    <PaymentElement />
+                    <button  className="btn btn-dark m-4" onClick={onPay}>Pay</button>
+                </div>}
+            </div>
+        </div>
     </>
 }
 

@@ -10,3 +10,9 @@ export const saveUserOrder = (payload) => axios.post('/user/order', payload)
 export const ChangeUserActiveStatus = (body) => axios.put(`/user/activeStatus`, body)
 export const DeleteUser = (id) => axios.delete(`/user/deleteUser/${id}`)
 export const SearchUser = (body) => axios.post(`/user/search`, body)
+
+export const addToWishList = (payload) => axios.put('/user/wishlist', payload);
+
+export const removeFromWishList = (payload) => axios.post('/user/wishlist', payload);
+
+export const getFromWishList = (userId) => axios.get(`/user/wishlist/${userId}`);

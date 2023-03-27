@@ -17,10 +17,10 @@ function NavMobileViewComponent() {
                     <NavBarLinkComponent btnTitle='Shop' redirectUrl='/shop'/>
                 </li>
                 <li>
-                    <NavBarLinkComponent btnTitle='Watch' redirectUrl='/'/>
+                    <NavBarLinkComponent btnTitle='Watch' redirectUrl=''/>
                 </li>
                 <li>
-                    <NavBarLinkComponent btnTitle='More' redirectUrl='/'/>
+                    <NavBarLinkComponent btnTitle='More' redirectUrl=''/>
                 </li>
                 <li>
                     <NavBarLinkComponent btnTitle='Contact' redirectUrl='/contact'/>

@@ -130,13 +130,8 @@ const AdminPageComponent = () => {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                     <li>
-                      <a className="dropdown-item" href="frontend/src#">
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="frontend/src#">
-                        Profile
+                      <a className="dropdown-item" href="/">
+                        Shop
                       </a>
                     </li>
                     <li>

@@ -10,7 +10,8 @@ import NavProfileViewComponent from './components/navProfileView/NavProfileView.
 import NavBarSearchComponent from './components/NavBarSearch.Component';
 import { useDispatch, useSelector } from 'react-redux';
 import { restoreCart } from '../../redux/cart.slicer';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { restoreComparedProducts } from '../../redux/compare.slicer';
 import {ContextRootDispatch, ContextRootState} from "../../context/RootStore.Context";
 function NavComponent() {
 	const [widthMob, setWidthMob] = useState(window.innerWidth);
@@ -42,6 +43,10 @@ function NavComponent() {
 	useEffect(() => {
 		if (localStorage.hasOwnProperty('cart')) {
 			dispatch(restoreCart(JSON.parse(localStorage.getItem('cart'))));
+		}
+		if(localStorage.hasOwnProperty('zu_compare')){
+			console.log("restored compare");
+			dispatch(restoreComparedProducts(JSON.parse(localStorage.getItem('zu_compare'))));
 		}
 	}, []);
 

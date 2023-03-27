@@ -61,7 +61,7 @@ const cartSlice = createSlice({
             console.log(id, index);
             let copyCart = [...state.cart];
 
-            // copyCart.splice(index, 1);
+            copyCart.splice(index, 1);
             state.totalCount--;
             state.cart = copyCart.filter((el) => {
                 return el._id !== id

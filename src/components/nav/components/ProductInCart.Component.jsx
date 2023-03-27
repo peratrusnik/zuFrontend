@@ -10,13 +10,21 @@ const ProductInCartComponent = ({ product, index }) => {
 
 	const shortTitle = () => {
 		let shortTitleArr = product.title.split(' ');
-		let newTitle = `${shortTitleArr[0]} ${shortTitleArr[1]}...`;
+		let newTitle = '';
+		if(shortTitleArr.length <= 2){
+			for(let i =0; i< shortTitleArr.length; i++){
+				newTitle+= `${shortTitleArr[i]} `;
+			}
+		}else{
+			newTitle = `${shortTitleArr[0]} ${shortTitleArr[1]}...`;
+		}
 		return newTitle;
 	};
 
-	const handleDeletionFromCart = (e, id, index) => {
+	const handleDeletionFromCart = (e) => {
 		e.stopPropagation();
-		dispatch(deleteFromCart({ id, index }));
+		console.log(index);
+		dispatch(deleteFromCart(index));
 	};
 
 	return (
@@ -24,7 +32,7 @@ const ProductInCartComponent = ({ product, index }) => {
 			className='productInCart'
 			onClick={()=>navigate('/productDetails/'+product._id)}>
 			<div className="img-title-holder">
-			<Link className='img-holder'  to='#' onClick={(e)=>handleDeletionFromCart(e, product._id)}>
+			<Link className='img-holder' to='#' onClick={(e)=>handleDeletionFromCart(e)}>
 				<div className="x-holder" title="Remove from cart">
 					<AiOutlineClose />
 				</div>

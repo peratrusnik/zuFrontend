@@ -9,12 +9,16 @@ import RandomComponents from "../components/category/Random.Components";
 import Slide from "../components/homePageSLider/Slide";
 import TestimonialComponent from '../components/Testimonial/Testimonial.Component';
 import NewsletterModalComponent from '../components/newsletterModal/NewsletterModal.Component';
+import { toggleLoader } from '../redux/loader.slicer';
 function HomePageComponent() {
+
     const dispatch = useDispatch();
+
     useEffect(() => {
-        setTimeout(() => {
-            dispatch(toggleModal(true));
-        }, 5000);
+        dispatch(toggleLoader(true));            
+        setInterval(() => {
+            dispatch(toggleLoader(false))
+        },4000)
     }, []);
 
     return (

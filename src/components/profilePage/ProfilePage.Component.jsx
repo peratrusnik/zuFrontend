@@ -7,13 +7,14 @@ function ProfilePageComponent() {
     const userStore = useSelector((store) => store.userStore.user);
     return (
         <ContainerComponent>
-            <div className='profilePage-wrapper d-flex justify-content-center'>
-                <ul className='user-profile border col-8'>
-
-                    
-                    <li>{ userStore.firstName}</li>
-                    <li>{ userStore.lastName}</li>
-                    <li>{ userStore.email}</li>
+            <div className='profilePage-wrapper d-flex justify-content-center m-5'>
+                <ul className='user-profile border p-5' style={{listStyle: 'none'}}>                    
+                    <li>First Name: { userStore.firstName}</li>
+                    <li>Last Name: { userStore.lastName}</li>
+                    <li>Email: { userStore.email}</li>
+                    <li>Address: { userStore.address}</li>
+                    <li>Is Active: { userStore.isActive? "Yes" : 'No'}</li>
+                    <li>Id: { userStore._id}</li>
                 </ul>
             </div>
         </ContainerComponent>

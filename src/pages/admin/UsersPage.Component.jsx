@@ -56,7 +56,13 @@ const UsersPageComponent = () => {
     useEffect(() => {
         dispatch(toggleLoader(isLoading))
         // console.log(data);
-    }, [isLoading,data])
+    }, [isLoading, data])
+    
+    useEffect(() => {
+        if (searchedValue.length >= 3) {
+            onSearchHandler()
+        }
+    }, [searchValue])
 
     const renderErrorMsg = () => isError ? <p>{error.message}</p> : null
 
@@ -97,11 +103,7 @@ const UsersPageComponent = () => {
     }
     
     const renderUsers = () => {
-        // console.log(searchValue);
-        // console.log(searchedValue);
-        if (searchValue != '') {
-
-            // SearchUser({searchValue})
+        if (searchValue.length >= 3) {
             return searchedValue.map((user, index) => {
                 return <tr key={index}>
                     <td>

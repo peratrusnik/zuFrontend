@@ -42,14 +42,6 @@ const cartSlice = createSlice({
             }
             state.cart = copyArray;
             cartSlice.caseReducers.updateLocalStorage(state)
-            // localStorage.setItem(
-            //     'cart',
-            //     JSON.stringify({
-            //         cart: state.cart,
-            //         totalCount: state.totalCount,
-            //         totalPrice: state.totalPrice,
-            //     })
-            // );
         },
         restoreCart: (state, action) => {
             state.cart = action.payload.cart;
@@ -68,14 +60,7 @@ const cartSlice = createSlice({
             });
             state.totalPrice = subTotal(copyCart);
             cartSlice.caseReducers.updateLocalStorage(state)
-            // localStorage.setItem(
-            //     'cart',
-            //     JSON.stringify({
-            //         cart: state.cart,
-            //         totalPrice: state.totalPrice,
-            //         totalCount: state.totalCount,
-            //     })
-            // );
+  
         },
 
         setPrice: (state, action) => {
@@ -98,14 +83,6 @@ const cartSlice = createSlice({
 
             state.cart = copyArray;
             cartSlice.caseReducers.updateLocalStorage(state)
-            // localStorage.setItem(
-            //     'cart',
-            //     JSON.stringify({
-            //         cart: state.cart,
-            //         totalCount: state.totalCount,
-            //         totalPrice: state.totalPrice,
-            //     })
-            // );
         },
 
         updateLocalStorage: (state) => {
@@ -119,7 +96,6 @@ const cartSlice = createSlice({
                 })
             );
         },
-
 
         setCustomer: (state, action) => {
             state.user = action.payload

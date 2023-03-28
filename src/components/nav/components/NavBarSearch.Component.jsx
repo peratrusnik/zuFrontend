@@ -17,14 +17,15 @@ const NavBarSearchComponent = () => {
             navigate(`/shop/${searchValue.replaceAll(' ', '-')}`)
         }
     }
+
     return (
         <>
             <AiOutlineSearch onClick={() => setShowSearchInput(!showSearchInput)}/>
             {
                 showSearchInput ?
-                    <div style={{position: "absolute", top: "70px", zIndex:1}}>
-                        <input type="text" onChange={event => setSearchValue(event.target.value)} style={{width: '150px'}} />
-                        <button onClick={() => onSearch()}>search</button>
+                    <div className="searchPanelShop">
+                        <input className="searchItem" type="text" onChange={event => setSearchValue(event.target.value)} />
+                        <button className="btn btn-sm btn-dark" onClick={() => onSearch()}>search</button>
                     </div> : null
             }
 

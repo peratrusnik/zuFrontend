@@ -1,0 +1,20 @@
+.searchPanelShop{
+    position: absolute;
+    top: 100px; 
+    z-Index: 1; 
+    padding:10px;
+    background-Color:#fff; 
+    border:1px solid #111;
+    input{
+        position: relative;
+    }
+    @media (max-width: 990px){
+        top: 71px;
+    } 
+    button{
+        &:hover, &:active{
+           background-color: #333;
+           color: #fff;
+        }
+    }
+}

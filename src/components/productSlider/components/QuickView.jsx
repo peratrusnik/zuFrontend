@@ -1,8 +1,6 @@
 import React from 'react';
-import noImage from '../../../../../frontend/src/assets/img/noImage.png'
-import ButtonComponent from '../../../UIkit/Button.Component';
+import noImage from '../../../assets/img/noImage.png'
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../redux/cart.slicer';
 import Stars from '../../stars/Stars';
 
 function QuickView({ ad }) {

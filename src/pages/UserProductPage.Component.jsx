@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { UserProducts } from "../services/user.service";
 import ProductListItemComponent from "../components/productList/components/ProductListItem.Component";
 import { toggleLoader } from "../redux/loader.slicer";
+import HeaderComponent from "../components/headerSection/Header.Component";
 
 function UserProductPageComponent() {
   const { user } = useSelector((store) => store.userStore);
@@ -30,6 +31,7 @@ function UserProductPageComponent() {
 
   return (
     <div className="container">
+      <HeaderComponent title={"My Product Page"}></HeaderComponent>
       <h2>
         {user.firstName} {user.lastName}
       </h2>

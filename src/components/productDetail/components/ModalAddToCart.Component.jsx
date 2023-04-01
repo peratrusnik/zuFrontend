@@ -57,8 +57,8 @@ const ModalAddToCartComponent = ({productIndex,singleProduct,count})=>{
 												<p><span className='fw-bold'>Total shipping: </span>$0.00</p>
 												<p><span className='fw-bold'>Taxes: </span>$0.00</p>
 												<p><span className='fw-bold'>Total: </span>${totalPrice} (tax excl.)</p>
-												<button type="button" class="me-3 modal-continueBtn" data-bs-dismiss="modal">Continue Shopping</button>
-												<button type="button" class="modal-checkoutBtn" data-bs-dismiss="modal">
+												<button type="button" className="me-3 modal-continueBtn" data-bs-dismiss="modal">Continue Shopping</button>
+												<button type="button" className="modal-checkoutBtn" data-bs-dismiss="modal">
 													<Link to='/cartshop/checkout' className='modal-checkoutLink'>Proceed To Checkout</Link>
 												</button>
         										

@@ -18,7 +18,7 @@ function HomePageComponent() {
         dispatch(toggleLoader(true));            
         setInterval(() => {
             dispatch(toggleLoader(false))
-        },2000)
+        },1000)
     }, []);
 
     return (

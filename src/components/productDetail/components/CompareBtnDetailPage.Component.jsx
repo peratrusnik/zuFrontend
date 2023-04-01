@@ -99,7 +99,7 @@ import { addForComparison, deleteFromComparison } from '../../../redux/compare.s
 import ModalComparisonMsgComponent from './ModalComparisonMsg.Component';
 
 
-const CompareBtnDetailPageComponent = ({singleProduct})=>{
+const CompareBtnDetailPageComponent = ({ singleProduct, productIndex }) => {
 
     const [isCompared, setIsCompared] = useState(false);
     const comparedProductsList = useSelector((state)=>state.compareStore.comparedProducts);
@@ -119,15 +119,13 @@ const CompareBtnDetailPageComponent = ({singleProduct})=>{
                 setIsCompared(false);
             }
 
-
         }else{
             setIsCompared(false);
         }
 
-
     },[singleProduct])
 
-    const handleComparison = ()=>{
+    const handleComparison = () =>{
 
         let comparedProductIndex = null;
 
@@ -169,7 +167,7 @@ const CompareBtnDetailPageComponent = ({singleProduct})=>{
     return(
         <>
 			<button type='button' className='compare' data-bs-toggle="modal" 
-                data-bs-target="#compareModal" onClick={()=>handleComparison()}>
+                data-bs-target={`#compareModal${productIndex}`} onClick={()=>handleComparison()}>
 				<div className='custom-title-compare'>
 					<div className='helper-triangle'></div>
 						Compare
@@ -178,7 +176,7 @@ const CompareBtnDetailPageComponent = ({singleProduct})=>{
 
 			</button>
 
-            <ModalComparisonMsgComponent showComparisonMsg={showComparisonMsg} />        
+            <ModalComparisonMsgComponent showComparisonMsg={showComparisonMsg} productIndex={productIndex} />        
         </>
     )
 }

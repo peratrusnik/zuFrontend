@@ -16,7 +16,6 @@ const ProductListCompareComponent = ()=>{
         let iconCells = comparedProductsList.map((el,index)=>{
             return (
 
-
                     <td key={index} className='icon-cell'>
                     <div className="icon-remove-holder">
                         <button type='button' className='removeComparisonBtn' 
@@ -121,40 +120,28 @@ const ProductListCompareComponent = ()=>{
     }
     return(
         <>
-
             <div className="comparisonWrapper">
-
             {
-
                 comparedProductsList.length ? 
-
-
                    ( <table className='tableComparison'>
                     <tbody>
                         <tr>
                             <th rowSpan={6} className="th-features">Features</th>
                             {iconRow()}
                         </tr>
-
                         {featureRows()}
-
                         <tr>
                             <th>Rating</th>
                             {ratingRow()}
                         </tr>
                     </tbody>
-
                     </table>
                    )
-
                 :
-
-                'There are no products selected for comparison.'
-
-            }
+                        'There are no products selected for comparison.'
+                }
 
             </div>
-
         </>
     )
 }

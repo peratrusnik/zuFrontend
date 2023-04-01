@@ -22,7 +22,7 @@ function SliderComponent() {
             .then(res => {
                 if (res.status === 200) {
                     dispatch(setRandomProduct(res.data))
-                    console.log(res.data);
+                    // console.log(res.data);
                 }
             })
             .catch(error => {
@@ -36,7 +36,7 @@ function SliderComponent() {
             speed: 250,
             rows:2,
             slidesToShow: 4,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
             arrows: false,
             dots: false,
             responsive: [            
@@ -83,7 +83,7 @@ function SliderComponent() {
             </div>
             <Slider {...sliderSettings} ref={customeSlider}>
                 {randomProduct && randomProduct.map((ad, index) => {
-                    return <SingleSlideComponent key={index} ad={ad} />
+                    return <SingleSlideComponent key={index} ad={ad}/>
                 })}            
             </Slider>
         </div>       

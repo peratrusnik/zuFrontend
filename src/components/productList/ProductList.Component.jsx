@@ -78,7 +78,7 @@ const ProductListComponent = () => {
         if (productList.length) {
             return productList.map((item, index) => {
                 return (
-                    <ProductListItemComponent product={item} key={index} />
+                    <ProductListItemComponent product={item} key={index} index={index} />
                 );
             });
         }

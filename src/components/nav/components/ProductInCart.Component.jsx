@@ -24,7 +24,7 @@ const ProductInCartComponent = ({ product, index }) => {
 	const handleDeletionFromCart = (e) => {
 		e.stopPropagation();
 		console.log(index);
-		dispatch(deleteFromCart(index));
+		dispatch(deleteFromCart({index, id: product._id}));
 	};
 
 	return (

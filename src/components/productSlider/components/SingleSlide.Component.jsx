@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import CartBoxOnHoverComponent from './CartBoxOnHover.Component';
 import VoteStarsComponent from './VoteStars.Component';
 import noImage from '../../../assets/img/noImage.png'
 import { Link } from 'react-router-dom';
 import ButtonComponent from '../../../UIkit/Button.Component';
 import { addToCart } from '../../../redux/cart.slicer';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
+import Stars from '../../stars/Stars';
 
 function SingleSlideComponent({ ad }) {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch()   
     
-    const toggleEffect = () => {        
+    const toggleEffect = () => {           
         setTimeout(() => {
             let cart = document.querySelector('.cartInfo-with-products');
             cart.style.cssText = `
@@ -26,12 +27,13 @@ function SingleSlideComponent({ ad }) {
             cart.style.cssText = ``            
         },3000)              
     }
+
     const goToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
         });
-        toggleEffect()
+       toggleEffect()
     }
     return (
         <div className='card slider-card'>
@@ -44,7 +46,7 @@ function SingleSlideComponent({ ad }) {
                         <img src={ad.imgUrl || noImage} />                        
                     </span>
                 </Link>              
-                <CartBoxOnHoverComponent/>   
+                <CartBoxOnHoverComponent ad={ad} />
             </div>            
             <Link to={`/productDetails/${ad._id}`}><h3 className='title'>{ad.title.slice(0, 25)}</h3></Link>
             <div className="price-stars-wrapper mb-4">
@@ -52,7 +54,11 @@ function SingleSlideComponent({ ad }) {
                     <h4 className='price'>${ad.price}</h4>
                 </div>
                 <div className="comment-note">
-                    <VoteStarsComponent/>
+                <Stars
+                            rating={ad?.rating}
+                            all={false}
+                            ratingStar={ad?.rating}
+                        />
                 </div>
             </div>
             <ButtonComponent

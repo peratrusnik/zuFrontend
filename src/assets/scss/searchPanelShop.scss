@@ -1,17 +1,25 @@
 .searchPanelShop{
+    display: flex;
     position: absolute;
     top: 100px; 
     z-Index: 1; 
     padding:10px;
     background-Color:#fff; 
     border:1px solid #111;
+    right: 0;
     input{
         position: relative;
+        width: 70%;
+        height: 31px;
+        border-radius: 0;
+        border: 1px solid #999;
     }
     @media (max-width: 990px){
         top: 71px;
     } 
     button{
+        width: 30%;
+        border-radius: 0;
         &:hover, &:active{
            background-color: #333;
            color: #fff;

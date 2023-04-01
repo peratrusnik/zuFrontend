@@ -1,12 +1,14 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 import ContainerComponent from '../../UIkit/Container.Component';
+import HeaderComponent from '../headerSection/Header.Component';
 
 function ProfilePageComponent() {
-    const dispatch = useDispatch();
     const userStore = useSelector((store) => store.userStore.user);
     return (
         <ContainerComponent>
+            <HeaderComponent title={'Profile Page'}>
+            </HeaderComponent>
             <div className='profilePage-wrapper d-flex justify-content-center m-5'>
                 <ul className='user-profile border p-5' style={{listStyle: 'none'}}>                    
                     <li>First Name: { userStore.firstName}</li>
@@ -17,6 +19,7 @@ function ProfilePageComponent() {
                     <li>Id: { userStore._id}</li>
                 </ul>
             </div>
+            
         </ContainerComponent>
     );
 }

@@ -6,6 +6,8 @@ import {addToCart} from '../../../redux/cart.slicer';
 import ButtonComponent from "../../../UIkit/Button.Component";
 import noImage from '../../../assets/img/noImage.png'
 import ContainerComponent from "../../../UIkit/Container.Component";
+import CompareBtnDetailPageComponent from "../../productDetail/components/CompareBtnDetailPage.Component";
+import CartBoxOnHoverComponent from "../../productSlider/components/CartBoxOnHover.Component";
 
 const ProductListItemComponent = (props) => {
     const {product, isEditMode} = props
@@ -46,6 +48,7 @@ const ProductListItemComponent = (props) => {
     }
 
     //todo: on click redirect to /product/:id
+    console.log(props.index);
     return (
        
 
@@ -55,11 +58,13 @@ const ProductListItemComponent = (props) => {
 
                 <img className="img img-fluid"
                     src={product.imgUrl || noImage }
-                    alt="placeholder img" />
+                        alt="placeholder img" />
                 </div>
                 <p className="zu-product-item-name">{product.title.slice(0,30)}</p>
                 <p className="zu-product-item-price">${product.price}</p>
             </Link>
+            <CartBoxOnHoverComponent ad={product} />
+            {/* <CompareBtnDetailPageComponent singleProduct={product} productIndex={product._id} />   */}
             {
                 isEditMode ? (
                     <button className="zu-product-item-btn" onClick={() => onRedirect()}>

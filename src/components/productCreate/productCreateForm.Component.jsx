@@ -152,7 +152,7 @@ const ProductCreateEditFormComponent = () => {
                     <div className="mb-3">
                         <img src={imgString || product.imgUrl} alt=""/>
                     </div>
-            <button type="submit">{productId ? 'Update' : 'Create'}</button>
+            <button className="btn btn-dark mb-5 d-block m-auto" type="submit">{productId ? 'Update' : 'Create'}</button>
         </form>
     }
     return (

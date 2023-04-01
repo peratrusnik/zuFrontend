@@ -51,10 +51,10 @@ function NavComponent() {
 	}, []);
 
 	const toggleCart = () => {
-		dispatchContext({
-			...context,
-			user: {name:"laza"}
-		})
+		// dispatchContext({
+		// 	...context,
+		// 	user: {name:"laza"}
+		// })
 		if (!cart.length) {
 			if (widthMob < 990) {
 				setToggleViewCart((prevState) => !prevState);
@@ -105,7 +105,9 @@ function NavComponent() {
 			{/* mobile view start here */}
 			<NavMobileViewComponent />
 			{/* desktop view */}
-			<img src={logo} alt='logoImg' />
+			<Link to={'/'}>
+				<img src={logo} alt='logoImg' />
+			</Link>
 			<NavDesktopViewComponent />
 			{/* profile and login section */}
 			<div className='user'>

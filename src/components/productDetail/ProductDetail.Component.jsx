@@ -30,6 +30,7 @@ function ProductDetailComponent() {
     const { user } = useSelector((state) => state.userStore);
     const location = useLocation()
 
+
     useEffect(() => {
         window.scroll(0, 0)
     }, [location])
@@ -132,7 +133,7 @@ function ProductDetailComponent() {
                             handleAddToCart={handleAddToCart}
                             singleProduct={singleProduct}
                             count={count}
-                            />
+                        />
                             
                         	{!user?.wishList?.includes(singleProduct._id) ? (
 							<div className='wishlist'>
@@ -161,7 +162,7 @@ function ProductDetailComponent() {
                                         />
                                     </div>
                                 )}
-                                <CompareBtnDetailPageComponent singleProduct={singleProduct} />
+                                <CompareBtnDetailPageComponent singleProduct={singleProduct} productIndex={singleProduct._id} />
                     </div>
                     <ul className='social-network'>
                         <li>

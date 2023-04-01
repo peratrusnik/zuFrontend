@@ -13,7 +13,9 @@ const WishlistProductsComponent = ()=>{
 		getFromWishList(userId)
 			.then((res) => setWishListProduct(res.data))
 			.catch((err) => console.log(err));
-	}, []);
+    }, []);
+    
+    
     const renderWishlist = ()=>{
         let productsInWishlist = wishListProductList.map((singleProduct,index)=>{
             return (<OneProductInWishlistComponent key={index} singleProduct={singleProduct} 

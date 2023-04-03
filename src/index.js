@@ -49,6 +49,7 @@ import ProfilePageComponent from './components/profilePage/ProfilePage.Component
 import WishListPageComponent from './pages/Wishlist.Page.Component';
 import ProductComparePageComponent from './pages/ProductComparePage.Component';
 import compareSlicer from './redux/compare.slicer';
+import serverSlicer from './redux/server.slicer';
 
 
 const router = createBrowserRouter([
@@ -231,6 +232,7 @@ const store = configureStore({
         modalStore: modalSlicer,
         cartStore: cartSlicer,
         compareStore: compareSlicer,
+        serverStore: serverSlicer,
     },
 });
 const queryClient = new QueryClient();

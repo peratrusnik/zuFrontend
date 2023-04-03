@@ -12,11 +12,13 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTopComponent from './components/ScrollToTop/ScrollToTop.Component';
 
+const serverBackend = "https://zurea-shop.onrender.com/api"
+const localhostAddress = "http://localhost:5050/api"
 
 if(process.env.NODE_ENV ==="development"){
-    axios.defaults.baseURL = "http://localhost:5050/api";
+    axios.defaults.baseURL = localhostAddress;
 }else{
-   axios.defaults.baseURL = "https://zurea-shop.onrender.com/api";
+    axios.defaults.baseURL = serverBackend;
 }
 
 axios.interceptors.request.use((config) => {
@@ -36,6 +38,7 @@ function App() {
         }
         setIsFinish(true)
     }, []);
+
     return isFinish && (
         <>
             <ToastContainer/>

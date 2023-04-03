@@ -31,8 +31,11 @@ function CartBoxOnHoverComponent({ ad }) {
                 dispatch(saveUser(res.data));
                 setUserToLocalStorage(res.data);
             });
+            toast.success("Successfully add to wish list!")
         }
-        toast.success("Successfully add to wish list!")
+        if (!user) {
+            toast.warning("You must be logged in to add product in wishlist!")            
+        }
     };
 
     const deleteFromWishList = () => {

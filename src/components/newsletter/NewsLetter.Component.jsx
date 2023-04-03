@@ -14,11 +14,13 @@ import {
 
 } from 'react-icons/fa'
 
+
 const NewsletterSchema = Yup.object({
     email: Yup.string().email().required('Email is required'),
 })
 
 function NewsLetterComponent() {
+
     return (
         <ContainerComponent isFluid={true}>
             <div className='newslatter-wrapper'>

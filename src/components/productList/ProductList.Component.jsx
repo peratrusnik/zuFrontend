@@ -7,7 +7,6 @@ import ProductListItemComponent from './components/ProductListItem.Component';
 import {useParams, useSearchParams} from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import {toggleLoader} from "../../redux/loader.slicer";
-import ContainerComponent from '../../UIkit/Container.Component';
 
 const perPageNums = [4, 8, 12, 16, 20, 24];
 const ProductListComponent = () => {

@@ -5,9 +5,7 @@ import Stars from '../../stars/Stars';
 
 function QuickView({ ad }) {
 
-    console.log(ad);
-
-    const dispatch = useDispatch
+    // console.log(ad);
 
     const ShowView = () => {
         return <div className='quick-view-box container'>

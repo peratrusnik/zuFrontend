@@ -2,6 +2,7 @@ import {useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {saveUserOrder} from "../services/user.service";
+import ContainerComponent from "../UIkit/Container.Component";
 
 
 const OrderPageComponent = () => {
@@ -30,12 +31,15 @@ const OrderPageComponent = () => {
     //todo: render cart products
     const renderMsg = () => {
         if (!redirectStatus || redirectStatus !== 'succeeded') return <p>Something went wrong with payment.</p>
-        return <p>Successfully bought products.</p>
+        return <p className="m-2">Successfully bought products.</p>
     }
     return <>
-        <h2>Order finalized</h2>
-        {renderMsg()}
+        <div className="text-center m-5">            
+            <h2 className="m-2">Order finalized</h2>
+            {renderMsg()}
+        </div>
     </>
+    
 }
 
 export default OrderPageComponent

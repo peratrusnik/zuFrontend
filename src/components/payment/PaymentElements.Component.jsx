@@ -17,7 +17,7 @@ const PaymentElementsComponent = ({ck}) => {
         stripe.confirmPayment({
             elements,
             confirmParams: {
-                return_url: 'http://localhost:3000/order'
+                return_url: 'https://zu-frontend.vercel.app/order'
             }
         })
     }

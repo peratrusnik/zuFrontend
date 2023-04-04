@@ -1,4 +1,4 @@
-import {Navigate, useSearchParams} from "react-router-dom";
+import {Navigate, useNavigate, useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {saveUserOrder} from "../services/user.service";
@@ -12,13 +12,14 @@ const OrderPageComponent = () => {
     const cart = useSelector(state => state.cartStore)
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         setRedirectStatus(searchParams.get('redirect_status'))
         setTimeout(() => {
             dispatch(clearCart())
-            Navigate('/')
-        }, 5000)
+            navigate('/')
+        }, 8000)
     }, [searchParams])
 
     useEffect(() => {

@@ -62,6 +62,12 @@ const cartSlice = createSlice({
             cartSlice.caseReducers.updateLocalStorage(state)
   
         },
+        clearCart: (state) => {
+            state.cart = []
+            state.totalPrice = 0
+            state.totalCount = 0
+            cartSlice.caseReducers.updateLocalStorage(state)
+        },
 
         setPrice: (state, action) => {
             const {increment, index} = action.payload;
@@ -109,6 +115,6 @@ function subTotal(cart) {
     }, 0);
 }
 
-export const {addToCart, restoreCart, deleteFromCart, setPrice, setCustomer} =
+export const {addToCart, restoreCart, deleteFromCart, setPrice, setCustomer, clearCart} =
     cartSlice.actions;
 export default cartSlice.reducer;

@@ -131,10 +131,13 @@ function CheckoutComponent() {
         </form>
     }
     return <>
-        <div className="payment-wrapper d-flex justify-content-center">
-        <div className="col-6">
+        <div className="payment-wrapper">
+            <div className="row justify-content-center">
+
+        <div className="col-xl-6 col-md-8 col-sm-12">
             {renderForm()}
         </div>
+            </div>
         </div>
     </>
 }

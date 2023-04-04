@@ -1,7 +1,8 @@
 import {redirect, useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {saveUserOrder} from "../services/user.service";
+import { clearCart } from "../redux/cart.slicer";
 
 
 
@@ -10,9 +11,12 @@ const OrderPageComponent = () => {
     const [searchParams] = useSearchParams()
     const cart = useSelector(state => state.cartStore)
 
+    const dispatch = useDispatch()
+
     useEffect(() => {
         setRedirectStatus(searchParams.get('redirect_status'))
         setTimeout(() => {
+            dispatch(clearCart())
             redirect('/')
         }, 5000)
     }, [searchParams])
@@ -33,12 +37,12 @@ const OrderPageComponent = () => {
 
     //todo: render cart products
     const renderMsg = () => {
-        if (!redirectStatus || redirectStatus !== 'succeeded') return <p>Something went wrong with payment.</p>
-        return <p className="m-2">Successfully bought products.</p>
+        if (!redirectStatus || redirectStatus !== 'succeeded') return <p className="m-5">Something went wrong with payment.</p>
+        return <p className="m-5">Successfully bought products.</p>
     }
     return <>
         <div className="text-center m-5">            
-            <h2 className="m-2">Order finalized</h2>
+            <h2 className="m-5">Order finalized</h2>
             {renderMsg()}
         </div>
     </>

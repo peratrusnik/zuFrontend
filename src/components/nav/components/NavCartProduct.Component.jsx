@@ -1,8 +1,7 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductsInCartComponent from './ProductsInCart.Component';
-
-
+import { clearCart } from '../../../redux/cart.slicer';
 
 const NavCartProductComponent = ({
 	productsList,
@@ -23,6 +22,12 @@ const NavCartProductComponent = ({
 			setToggleViewCart(false);
 		}
 	};
+
+	const dispatch = useDispatch()
+
+	const handleClearCart = () => {
+		dispatch(clearCart())
+	}
 	
 	return (
 		<>
@@ -33,10 +38,13 @@ const NavCartProductComponent = ({
 						: 'cartInfo-with-products'
 				}`}>
 				<div className='cart-products-holder'>
-					<h5>
-						Your Cart: {productsList} Item
-						{productsList > 1 ? 's' : null}
-					</h5>
+					<div className="d-flex justify-content-between">
+						<h5>
+							Your Cart: {productsList} Item
+							{productsList > 1 ? 's' : null}
+						</h5>
+						<a style={{ color: 'red', textDecoration: 'underline' }} onClick={()=>{ if (window.confirm(`Are you sure want to delete all products from cart?`)) { handleClearCart() } }}>Clear cart</a>
+					</div>
 					<ProductsInCartComponent hideCartHolder={hideCartHolder} />
 					<div className='subtotalHolder'>
 						<p>Subtotal</p>

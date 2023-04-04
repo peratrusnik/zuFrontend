@@ -1,8 +1,8 @@
-import {useSearchParams} from "react-router-dom";
+import {redirect, useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {saveUserOrder} from "../services/user.service";
-import ContainerComponent from "../UIkit/Container.Component";
+
 
 
 const OrderPageComponent = () => {
@@ -12,6 +12,9 @@ const OrderPageComponent = () => {
 
     useEffect(() => {
         setRedirectStatus(searchParams.get('redirect_status'))
+        setTimeout(() => {
+            redirect('/')
+        }, 5000)
     }, [searchParams])
 
     useEffect(() => {

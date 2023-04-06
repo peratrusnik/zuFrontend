@@ -50,6 +50,7 @@ import WishListPageComponent from './pages/Wishlist.Page.Component';
 import ProductComparePageComponent from './pages/ProductComparePage.Component';
 import compareSlicer from './redux/compare.slicer';
 import serverSlicer from './redux/server.slicer';
+import currencySlicer from './redux/currencySlicer';
 
 
 const router = createBrowserRouter([
@@ -233,6 +234,7 @@ const store = configureStore({
         cartStore: cartSlicer,
         compareStore: compareSlicer,
         serverStore: serverSlicer,
+        currencyStore: currencySlicer,
     },
 });
 const queryClient = new QueryClient();

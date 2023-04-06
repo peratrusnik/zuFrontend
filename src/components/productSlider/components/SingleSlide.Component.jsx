@@ -7,6 +7,7 @@ import ButtonComponent from '../../../UIkit/Button.Component';
 import { addToCart } from '../../../redux/cart.slicer';
 import { useDispatch} from 'react-redux';
 import Stars from '../../stars/Stars';
+import ChangeCurrency from '../../ChangeCurrency/ChangeCurrency';
 
 function SingleSlideComponent({ ad }) {
 
@@ -51,7 +52,7 @@ function SingleSlideComponent({ ad }) {
             <Link to={`/productDetails/${ad._id}`}><h3 className='title'>{ad.title.slice(0, 25)}</h3></Link>
             <div className="price-stars-wrapper mb-4">
                 <div className="price-content">                                
-                    <h4 className='price'>${ad.price}</h4>
+                    <h4 className='price'><ChangeCurrency changePrice={ad.price} /></h4>
                 </div>
                 <div className="comment-note">
                 <Stars

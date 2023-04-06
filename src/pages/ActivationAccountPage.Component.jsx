@@ -18,7 +18,7 @@ const ActivationAccountPageComponent = () => {
                     setMessage('Successfully activated account. Redirecting to login page.')
                     setTimeout(() => {
                         navigate('/login')
-                    }, 3000)
+                    }, 5000)
                 })
                 .catch(error => {
                     console.log(error);
@@ -31,10 +31,12 @@ const ActivationAccountPageComponent = () => {
     }, [userId])
 
     return <>
-        <h1>Activate account page</h1>
-        <p>
-            {message}
-        </p>
+        <div className="text-center m-5">
+            <h1 className="m-5">Activate account page</h1>
+            <p>
+                {message}
+            </p>
+        </div>
     </>
 }
 

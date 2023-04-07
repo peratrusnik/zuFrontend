@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SingleCartComponent from './components/SingleCart.Component';
 import { clearCart } from '../../redux/cart.slicer';
 import { Link, redirect } from 'react-router-dom';
+import ChangeCurrency from '../ChangeCurrency/ChangeCurrency';
 
 function CartComponent() {
 	const { cart, totalCount, totalPrice } = useSelector(
@@ -44,7 +45,7 @@ function CartComponent() {
 				</div>
 				<div className='forPay'>
 					<h3>Total for pay:</h3>
-					<p>${totalPrice}</p>
+					<p><ChangeCurrency changePrice={totalPrice} /></p>
 				</div>
 				<div className="clearWrapper m-2 d-flex justify-content-end">
 					<button className='btn btn-danger' onClick={() => { if (window.confirm(`Are you sure want to delete all products from cart?`)) { handleClearCart() } }}>Clear cart</button>

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductsInCartComponent from './ProductsInCart.Component';
 import { clearCart } from '../../../redux/cart.slicer';
+import ChangeCurrency from '../../ChangeCurrency/ChangeCurrency';
 
 const NavCartProductComponent = ({
 	productsList,
@@ -48,7 +49,7 @@ const NavCartProductComponent = ({
 					<ProductsInCartComponent hideCartHolder={hideCartHolder} />
 					<div className='subtotalHolder'>
 						<p>Subtotal</p>
-						<p>${totalPrice} </p>
+						<p><ChangeCurrency changePrice={totalPrice} /></p>
 					</div>
 				</div>
 				<div className='btnGroup'>

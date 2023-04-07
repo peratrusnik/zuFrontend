@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { setPrice } from '../../../redux/cart.slicer';
+import ChangeCurrency from '../../ChangeCurrency/ChangeCurrency';
 
 function SingleCartComponent({ item, index }) {
 	const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function SingleCartComponent({ item, index }) {
 				</div>
 			</div>
 			<div className='desc-info'>
-				<p>${item.price}</p>
+				<p><ChangeCurrency changePrice={item.price} /></p>
 				<div className='singleCount'>
 					<div
 						className='shevronDown-wrapper'
@@ -39,7 +40,7 @@ function SingleCartComponent({ item, index }) {
 						<FaChevronUp />
 					</div>
 				</div>
-				<p className='subtotal'>${item.cartTotal}</p>
+				<p className='subtotal'><ChangeCurrency changePrice={item.cartTotal} /></p>
 			</div>
 		</div>
 	);

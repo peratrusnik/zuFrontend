@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import ChangeCurrency from '../components/ChangeCurrency/ChangeCurrency';
 
 const cartSlice = createSlice({
     name: 'cart',

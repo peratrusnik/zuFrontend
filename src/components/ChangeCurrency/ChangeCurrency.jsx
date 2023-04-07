@@ -45,16 +45,13 @@ function ChangeCurrency({changePrice}) {
             return parseFloat(changePrice).toFixed(2)
         }
         if (symbol === "RSD") {
-            return parseFloat(changePrice * 117.5).toFixed(2)
+            return parseFloat(changePrice * 117.28).toFixed(2)
         }
     }
 
     return (
         <>
             {symbol && checkSymbol()} {symbol}
-            {/* {rates && rates.map((rate, index) => {
-                <li key={index}>{rate.name}</li>
-            })} */}
         </>
     );
 }

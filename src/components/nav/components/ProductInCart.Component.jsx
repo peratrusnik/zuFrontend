@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {AiOutlineClose} from 'react-icons/ai';
 import { deleteFromCart } from '../../../redux/cart.slicer';
 import { useNavigate } from 'react-router-dom';
+import ChangeCurrency from '../../ChangeCurrency/ChangeCurrency';
 
 const ProductInCartComponent = ({ product, index }) => {
 	const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const ProductInCartComponent = ({ product, index }) => {
 			</div>
 			<div className='count-price-holder'>
 				<div className='count-holder'>{product.count} x</div>
-				<div className='price-holder'>${product.price}</div>
+				<div className='price-holder'><ChangeCurrency changePrice={product.price} /></div>
 			</div>
 
 		</div>

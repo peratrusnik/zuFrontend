@@ -12,7 +12,7 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTopComponent from './components/ScrollToTop/ScrollToTop.Component';
 
-const serverBackend = "https://zurea-shop.onrender.com/api"
+const serverBackend = "https://slate-gray-harp-seal-gown.cyclic.app"
 const localhostAddress = "http://localhost:5050/api"
 
 if(process.env.NODE_ENV ==="development"){
